@@ -1,0 +1,27 @@
+.brew-table {
+    width: 90%;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+.brew-table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.brew-table tr:hover {
+    background-color: lightgray;
+}
+
+.brew-header {
+    border: 1px solid gray;
+}
+
+.brew-content {
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.brew-content-description {
+    border: 1px solid gray;
+    text-align: left;
+}
