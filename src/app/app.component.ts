@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
   // Since this is an exercise, I wanted to build the features myself without using a 3rd party datatable.
   public beers;
   public breweries;
+  showAllBeers: boolean = false;
+  showAbvDropdown: boolean = false;
 
   constructor(private http: HttpClient, private tableService: TableService){
 
@@ -26,14 +28,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.tableService.getBeers().subscribe(data => {
       this.beers = data;
-      console.log(data);
     });
 
     this.tableService.getBreweries().subscribe(data => {
       this.breweries = data;
-      console.log(data);
     })
   }
-
-  title = 'app';
 }

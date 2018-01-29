@@ -4,6 +4,7 @@
     The Brewmaster
   </h1>
 </div>
+<button (click)="showAllBeers = !showAllBeers" type="button">Show All Beers / Show Less Beers</button>
 <table class="brew-table">
   <thead>
     <tr>
@@ -14,13 +15,22 @@
       <th class="brew-header">Description</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="!showAllBeers">
     <tr *ngFor="let beer of beers | slice:0:10 ">
       <td class="brew-content">{{beer.name}}</td>
       <td class="brew-content">{{beer.brewery_id}}</td>
       <td class="brew-content">{{beer.style_name}}</td>
-      <td class="brew-content">{{beer.abv}}</td>
+      <td class="brew-content">{{beer.abv | number}}</td>
       <td class="brew-content-description">{{beer.descript}}</td>
     </tr>
   </tbody>
+  <tbody *ngIf="showAllBeers">
+      <tr *ngFor="let beer of beers">
+        <td class="brew-content">{{beer.name}}</td>
+        <td class="brew-content">{{beer.brewery_id}}</td>
+        <td class="brew-content">{{beer.style_name}}</td>
+        <td class="brew-content">{{beer.abv | number}}</td>
+        <td class="brew-content-description">{{beer.descript}}</td>
+      </tr>
+    </tbody>
 </table>
