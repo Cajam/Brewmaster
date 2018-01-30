@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
 import { TableService } from './table.service';
+import { FilterPipe } from './filter.pipe';
 
 @Component({
   selector: 'app-root',

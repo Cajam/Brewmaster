@@ -6,10 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TableService } from './table.service';
+import { FilterPipe } from './filter.pipe';
+import { BreweryPipe } from './brewery.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterPipe,
+    BreweryPipe
   ],
   imports: [
     BrowserModule,

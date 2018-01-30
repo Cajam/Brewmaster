@@ -8,18 +8,18 @@
 <table class="brew-table">
   <thead>
     <tr>
-      <th class="brew-header">Beer</th>
-      <th class="brew-header">Brewery</th>
-      <th class="brew-header">Style</th>
+      <th class="brew-header">Beer <br/> <input class="search-input" [(ngModel)]="searchText" placeholder="search beers..."></th>
+      <th class="brew-header">Brewery <br/> <input class="search-input" [(ngModel)]="brewerySearch" placeholder="search breweries..."></th>
+      <th class="brew-header">Style <br/> <input class="search-input" [(ngModel)]="styleSearch" placeholder="search styles..."></th>
       <th class="brew-header">ABV</th>
       <th class="brew-header">Description</th>
     </tr>
   </thead>
   <tbody *ngIf="!showAllBeers">
     <tr *ngFor="let beer of beers | slice:0:10 ">
-      <td class="brew-content">{{beer.name}}</td>
-      <td class="brew-content">{{beer.brewery_id}}</td>
-      <td class="brew-content">{{beer.style_name}}</td>
+      <td class="brew-content">{{beer.name }}</td>
+      <td class="brew-content">{{beer.brewery_id | brewFilter}}</td>
+      <td class="brew-content">{{beer.style_name }}</td>
       <td class="brew-content">{{beer.abv | number}}</td>
       <td class="brew-content-description">{{beer.descript}}</td>
     </tr>
